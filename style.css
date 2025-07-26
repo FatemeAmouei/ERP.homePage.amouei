@@ -170,15 +170,19 @@ body {
   background-color: #fff;
   height: 83vh;
   padding: 0 1rem;
-  overflow-y: auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .sideBar-top,
 .subMenu-list {
+  flex: 90%;
   list-style: none;
   padding: 0;
   margin: 0;
+  overflow-y: auto;
 }
 
 .menuItem-title {
@@ -237,8 +241,9 @@ a {
 }
 
 .sideBar-end {
-  margin-top: 14rem;
   text-align: center;
+  padding: 1rem 0;
+  width: 100%;
 }
 
 .logOut-btn {
@@ -369,3 +374,217 @@ button.page-btn.active {
 }
 
 /* FooterEnd */
+
+/* Respansive */
+@media (max-width: 768px) {
+  .header-container {
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    gap: 20rem;
+  }
+
+  .header-right {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+  }
+
+  .header-spans {
+    flex-direction: column;
+    font-size: 0.9rem;
+    padding-right: 0.5rem;
+  }
+
+  .system-title {
+    font-size: 0.9rem;
+  }
+
+  .company-name {
+    font-size: 0.7rem;
+  }
+
+  .header-left {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+  }
+
+  .user-info {
+    font-size: 0.8rem;
+  }
+
+  .optionsContainer {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    width: 20%;
+    z-index: 999;
+  }
+
+  .option {
+    font-size: 0.85rem;
+    padding: 0 0.5rem 0 3rem;
+  }
+
+  .options-icon {
+    font-size: 0.7rem;
+  }
+
+  .logo-img {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px 0 0;
+  }
+
+  .header-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .numberResult,
+  .num,
+  .numberPreview {
+    font-size: 11px;
+  }
+
+  .sidebar-section {
+    width: 180px;
+  }
+
+  .preview {
+    width: 50px;
+    height: 25px;
+  }
+
+  .Footer-section {
+    padding-top: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .header-container {
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    gap: 4rem;
+  }
+
+  .header-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  .logo-img {
+    width: 35px;
+    height: 35px;
+    margin: 0 10px 0 0;
+  }
+
+  .system-title,
+  .company-name {
+    font-size: 0.7rem;
+  }
+
+  .header-left {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .user-info {
+    font-size: 0.7rem;
+  }
+
+  .optionsContainer {
+    position: absolute;
+    top: 8%;
+    left: 2%;
+    width: 25%;
+    z-index: 999;
+  }
+
+  .option {
+    font-size: 0.7rem;
+    padding: 0 0.5rem 0 3rem;
+  }
+
+  .options-icon {
+    font-size: 0.7rem;
+  }
+
+  .sidebar-section {
+    width: 150px;
+  }
+
+  .sidebar-section.open {
+    transform: translateX(0);
+  }
+
+  .menuItem-title,
+  .Erp {
+    font-size: 10px;
+  }
+
+  .logOut-btn {
+    font-size: 12px;
+  }
+
+  .txt {
+    font-size: 9px;
+  }
+
+  .content-sidebar,
+  .content-container,
+  .Footer-section {
+    max-width: 100%;
+  }
+
+  .Footer-section {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .Footer-section {
+    padding: 12px;
+  }
+
+  .numberResult {
+    font-size: 10px;
+  }
+
+  .num {
+    font-size: 10px;
+    margin-right: 0;
+  }
+
+  .preview {
+    width: 40px;
+    height: 20px;
+  }
+
+  .preview p {
+    font-size: 10px;
+  }
+
+  .numberPreview {
+    padding: 2px;
+  }
+
+  .pagination-container div,
+  .pagination-container span,
+  .pagination-container button {
+    padding: 3px 5px;
+    font-size: 10px;
+  }
+}
