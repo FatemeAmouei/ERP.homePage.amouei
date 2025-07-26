@@ -464,7 +464,7 @@ button.page-btn.active {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 375px) {
   html,
   body {
     overflow-x: hidden;
