@@ -375,7 +375,8 @@ button.page-btn.active {
 
 /* FooterEnd */
 
-/* Respansive */
+/* StartRespansive */
+
 @media (max-width: 768px) {
   .header-container {
     align-items: center;
@@ -464,7 +465,7 @@ button.page-btn.active {
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 480px) {
   html,
   body {
     overflow-x: hidden;
@@ -588,3 +589,5 @@ button.page-btn.active {
     font-size: 10px;
   }
 }
+
+/* RespansiveEnd */
