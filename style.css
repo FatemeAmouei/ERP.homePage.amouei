@@ -2,15 +2,25 @@
   font-family: "IranSans";
   src: url("./font/fa-Iran-sans-web-light.woff2");
 }
+
+:root {
+  --gap: clamp(0.5rem, 3vw, 2rem);
+  --font-size-base: clamp(0.8rem, 2vw, 1.1rem);
+  --font-size-small: clamp(0.6rem, 1.5vw, 0.9rem);
+}
+
 * {
   font-family: "IranSans";
+  box-sizing: border-box;
 }
+
 html,
 body {
   margin: 0;
   padding: 0;
   height: 100%;
   direction: rtl;
+  overflow-x: hidden;
 }
 
 /* HeaderStart */
@@ -18,9 +28,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 5px 5px 50px;
+  padding: 1rem 2vw 1rem 5vw;
   background-color: #fff;
   margin-right: 0.2rem;
+  gap: var(--gap);
 }
 
 .header-right {
@@ -34,27 +45,31 @@ body {
 }
 
 .logo-img {
-  margin: 8px 16px 8px 10px;
+  margin: 0.5rem 1rem 0.5rem 0.7rem;
+  width: clamp(35px, 6vw, 50px);
+  height: clamp(35px, 6vw, 50px);
 }
 
 .system-title {
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: var(--font-size-base);
 }
 
 .company-name {
   color: #6c757d;
-  font-size: 0.9rem;
+  font-size: var(--font-size-small);
 }
 
 .header-left {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 1vw;
 }
 
 .header-icon {
   filter: grayscale(50%) brightness(0.5);
+  width: clamp(18px, 4vw, 24px);
+  height: clamp(18px, 4vw, 24px);
 }
 
 .divider {
@@ -70,7 +85,7 @@ body {
   align-items: center;
   padding-bottom: 0.5rem;
   color: #6c757d;
-  font-size: 0.9rem;
+  font-size: var(--font-size-small);
   cursor: pointer;
   gap: 0.5rem;
 }
@@ -93,18 +108,20 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: right;
+  align-items: flex-start;
   border: none;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  padding: 0.5rem;
   box-shadow: 0 3px 11px 0 rgba(0, 0, 0, 0.1);
   border-radius: 10px;
+  width: clamp(120px, 20vw, 220px);
 }
 
 .option {
   cursor: pointer;
   border-radius: 5px;
-  padding: 0 1rem 0 7rem;
+  padding: 0.5rem 1rem;
+  font-size: var(--font-size-small);
+  width: 100%;
 }
 
 .option:hover {
@@ -117,15 +134,15 @@ body {
   align-items: center;
   margin-left: 0.5rem;
   color: #6c757d;
-  font-size: 0.8rem;
+  font-size: var(--font-size-small);
 }
 
 .option:hover .options-icon {
   color: #000;
 }
-
 /* HeaderEnd */
 
+/* Sidebar and Content */
 .content-sidebar {
   display: flex;
   background-color: #e3e3e3;
@@ -134,6 +151,7 @@ body {
 
 #sidebar-container {
   flex: 18%;
+  min-width: 150px;
   box-shadow: 0 3px 11px 0 rgba(0, 0, 0, 0.1);
   margin: 0.8rem 0.2rem 0 0.5rem;
   background-color: #fff;
@@ -146,6 +164,7 @@ body {
   margin: 0.8rem 0 0 0.5rem;
   display: flex;
   flex-direction: column;
+  min-width: 300px;
 }
 
 .list {
@@ -156,17 +175,9 @@ body {
   flex: 10%;
 }
 
-/* sideBarStart */
-
-body {
-  font-family: sans-serif;
-  background: #f0f0f0;
-  margin: 0;
-  padding: 0;
-}
-
+/* SidebarStart */
 .sidebar-section {
-  width: 260px;
+  width: clamp(150px, 20vw, 260px);
   background-color: #fff;
   height: 83vh;
   padding: 0 1rem;
@@ -193,7 +204,7 @@ body {
   border-radius: 5px;
   transition: background 0.3s;
   cursor: pointer;
-  font-size: 13px;
+  font-size: var(--font-size-small);
   color: #6c757d;
 }
 
@@ -256,7 +267,7 @@ a {
   border: none;
   padding: 1rem;
   cursor: pointer;
-  font-size: 14px;
+  font-size: var(--font-size-small);
 }
 
 .logOut-btn:hover {
@@ -274,22 +285,31 @@ a {
   font-size: 0.8rem;
   color: #000;
 }
-/* sideBarEnd */
+/* SidebarEnd */
 
 /* FooterStart */
-
 .Footer-section {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 20px 16px;
+  padding: 1.5rem 1rem;
   border-top: 1px solid #ddd;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+@media (min-width: 900px) {
+  .Footer-section {
+    justify-content: space-between;
+  }
 }
 
 .Footer-right {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .result {
@@ -300,12 +320,12 @@ a {
 
 .numberResult {
   color: #6c757d;
-  font-size: 14px;
+  font-size: var(--font-size-small);
 }
 
 .num {
   font-weight: bold;
-  font-size: 15px;
+  font-size: var(--font-size-small);
   color: #333;
   border-left: 1px solid gray;
   padding-left: 10px;
@@ -319,8 +339,8 @@ a {
 }
 
 .preview {
-  width: 60px;
-  height: 30px;
+  width: clamp(40px, 8vw, 60px);
+  height: clamp(20px, 4vw, 30px);
   border: 1px solid rgb(231, 226, 226);
   box-shadow: 2px 2px 2px rgb(214, 212, 212);
   text-align: center;
@@ -333,11 +353,11 @@ a {
 
 .preview p {
   margin: 0;
-  font-size: 14px;
+  font-size: var(--font-size-small);
 }
 
 .numberPreview {
-  font-size: 14px;
+  font-size: var(--font-size-small);
   border-radius: 3px;
   padding: 5px;
   color: #333;
@@ -353,7 +373,6 @@ a {
   justify-content: flex-end;
   align-items: center;
   gap: 5px;
-  align-items: center;
 }
 
 .pagination-container div,
@@ -362,7 +381,7 @@ a {
   padding: 5px 8px;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: var(--font-size-small);
   background-color: transparent;
   border: none;
 }
@@ -372,222 +391,4 @@ button.page-btn.active {
   color: white;
   font-weight: bold;
 }
-
 /* FooterEnd */
-
-/* StartRespansive */
-
-@media (max-width: 768px) {
-  .header-container {
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    gap: 20rem;
-  }
-
-  .header-right {
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-  }
-
-  .header-spans {
-    flex-direction: column;
-    font-size: 0.9rem;
-    padding-right: 0.5rem;
-  }
-
-  .system-title {
-    font-size: 0.9rem;
-  }
-
-  .company-name {
-    font-size: 0.7rem;
-  }
-
-  .header-left {
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100%;
-  }
-
-  .user-info {
-    font-size: 0.8rem;
-  }
-
-  .optionsContainer {
-    position: absolute;
-    top: 10%;
-    left: 0;
-    width: 20%;
-    z-index: 999;
-  }
-
-  .option {
-    font-size: 0.85rem;
-    padding: 0 0.5rem 0 3rem;
-  }
-
-  .options-icon {
-    font-size: 0.7rem;
-  }
-
-  .logo-img {
-    width: 40px;
-    height: 40px;
-    margin: 0 10px 0 0;
-  }
-
-  .header-icon {
-    width: 20px;
-    height: 20px;
-  }
-
-  .numberResult,
-  .num,
-  .numberPreview {
-    font-size: 11px;
-  }
-
-  .sidebar-section {
-    width: 180px;
-  }
-
-  .preview {
-    width: 50px;
-    height: 25px;
-  }
-
-  .Footer-section {
-    padding-top: 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  html,
-  body {
-    overflow-x: hidden;
-  }
-
-  .header-container {
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    gap: 4rem;
-  }
-
-  .header-right {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-    width: 100%;
-  }
-
-  .logo-img {
-    width: 35px;
-    height: 35px;
-    margin: 0 10px 0 0;
-  }
-
-  .system-title,
-  .company-name {
-    font-size: 0.7rem;
-  }
-
-  .header-left {
-    width: 100%;
-    justify-content: flex-end;
-  }
-
-  .user-info {
-    font-size: 0.7rem;
-  }
-
-  .optionsContainer {
-    position: absolute;
-    top: 8%;
-    left: 2%;
-    width: 25%;
-    z-index: 999;
-  }
-
-  .option {
-    font-size: 0.7rem;
-    padding: 0 0.5rem 0 3rem;
-  }
-
-  .options-icon {
-    font-size: 0.7rem;
-  }
-
-  .sidebar-section {
-    width: 150px;
-  }
-
-  .sidebar-section.open {
-    transform: translateX(0);
-  }
-
-  .menuItem-title,
-  .Erp {
-    font-size: 10px;
-  }
-
-  .logOut-btn {
-    font-size: 12px;
-  }
-
-  .txt {
-    font-size: 9px;
-  }
-
-  .content-sidebar,
-  .content-container,
-  .Footer-section {
-    max-width: 100%;
-  }
-
-  .Footer-section {
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .Footer-section {
-    padding: 12px;
-  }
-
-  .numberResult {
-    font-size: 10px;
-  }
-
-  .num {
-    font-size: 10px;
-    margin-right: 0;
-  }
-
-  .preview {
-    width: 40px;
-    height: 20px;
-  }
-
-  .preview p {
-    font-size: 10px;
-  }
-
-  .numberPreview {
-    padding: 2px;
-  }
-
-  .pagination-container div,
-  .pagination-container span,
-  .pagination-container button {
-    padding: 3px 5px;
-    font-size: 10px;
-  }
-}
-
-/* RespansiveEnd */
