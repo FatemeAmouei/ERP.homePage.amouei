@@ -8,15 +8,21 @@ function loadJS(filePath) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  loadComponent("components/header.html", "header-container").then(() => {
-    loadJS("components/header.js");
+  Promise.all([
+    loadComponent("components/Header/header.html", "header-container").then(
+      () => loadJS("components/Header/header.js")
+    ),
+    loadComponent("components/Sidebar/sidebar.html", "sidebar-container").then(
+      () => loadJS("components/Sidebar/sidebar.js")
+    ),
+    loadComponent("components/Footer/footer.html", "Footer-section").then(() =>
+      loadJS("components/Footer/footer.js")
+    ),
+    loadComponent("components/Navbar/navbar.html", "navbar-container").then(
+      () => loadJS("components/Navbar/navbar.js")
+    ),
+  ]).then(() => {
+    loadJS("scripts/router.js");
+    loadJS("components/Navbar/breadcrumb.js");
   });
-  loadComponent("components/sidebar.html", "sidebar-container").then(() => {
-    loadJS("components/sidebar.js");
-  });
-  loadComponent("components/pagination.html", "pagination-container").then(
-    () => {
-      loadJS("components/pagination.js");
-    }
-  );
 });

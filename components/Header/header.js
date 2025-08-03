@@ -1,6 +1,6 @@
 const toggleButton = document.getElementById("toggleButton");
-const optionsContainer = document.getElementById("optionsContainer");
-const userIcon = document.querySelector(".user-icon");
+const optionsContainer = document.getElementById("options-container");
+const userIcon = document.querySelector(".header-user__icon");
 
 toggleButton.addEventListener("click", function () {
   if (optionsContainer.style.display === "none") {
