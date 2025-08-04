@@ -347,7 +347,7 @@ input[type="checkbox"]:checked + label + .submenu {
   padding: 8px 10px;
   margin-bottom: 2px;
   text-decoration: none !important;
-  color: inherit;
+  color: var(--gray-500);
 }
 
 .sidebar-left {
