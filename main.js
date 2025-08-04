@@ -23,6 +23,14 @@ document.addEventListener("DOMContentLoaded", () => {
     ),
   ]).then(() => {
     loadJS("scripts/router.js");
-    loadJS("components/Navbar/breadcrumb.js");
+
+    const breadcrumbScript = document.createElement("script");
+    breadcrumbScript.src = "components/Navbar/breadcrumb.js";
+    breadcrumbScript.onload = () => {
+      if (typeof window.updateBreadcrumb === "function") {
+        window.updateBreadcrumb();
+      }
+    };
+    document.body.appendChild(breadcrumbScript);
   });
 });
