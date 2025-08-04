@@ -43,10 +43,10 @@
   --gray-100: #f2f4f7;
   --gray-200: #e4e7ec;
   --gray-300: #d0d5dd;
-  --gray-400: #98a2b3;
-  --gray-500: #667085;
+  --gray-400: #87a7c8;
+  --gray-500: #587497;
   --gray-600: #475467;
-  --gray-700: #344054;
+  --gray-700: #2c425d;
   --gray-800: #101828;
   --gray-900: #0c111d;
 
@@ -283,7 +283,7 @@ body {
   transition: background 0.3s;
   cursor: pointer;
   font-size: var(--font-size-small);
-  color: var(--color-slateGray);
+  color: var(--gray-500);
 }
 
 .menu label:hover {
@@ -330,7 +330,10 @@ input[type="checkbox"]:checked + label + .submenu {
   transition: background 0.3s;
   cursor: pointer;
   font-size: var(--font-size-small);
-  color: var(--color-slateGray);
+  color: var(--gray-500);
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
 }
 
 .menu-title:hover {
@@ -358,6 +361,13 @@ input[type="checkbox"]:checked + label + .submenu {
 
 input[type="checkbox"]:checked + label .sidebar-arrow {
   transform: rotate(180deg);
+}
+
+.menu-title svg,
+.sidebar-right svg {
+  margin-left: 8px;
+  margin-right: 8px;
+  vertical-align: middle;
 }
 
 .sideBar-end {
@@ -409,13 +419,18 @@ input[type="checkbox"]:checked + label .sidebar-arrow {
   border-bottom: 1px solid var(--gray-400);
 }
 
-.navbar-section a {
+.breadcrumb-item a {
   text-decoration: none;
   color: var(--gray-400);
 }
 
-.active {
-  color: var(--gray-700) !important;
+.breadcrumb-item .fas {
+  padding-left: 5px;
+}
+
+.breadcrumb-item.active {
+  font-weight: bold;
+  color: var(--gray-700);
 }
 /* NavbarEnd */
 

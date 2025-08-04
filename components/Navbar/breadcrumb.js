@@ -6,80 +6,79 @@ window.updateBreadcrumb = function () {
 
   const hash = window.location.hash.trim();
   const path = hash.replace(/^#/, "");
-
-  const isHomePage = !hash || hash === "#";
+  const isHomePage = !hash || hash === "" || path === "dashboard";
 
   let breadcrumbItems = [];
 
-  if (isHomePage || path === "dashboard") {
+  if (isHomePage) {
     breadcrumbItems = [{ label: "خانه", icon: "fa-home", url: "#dashboard" }];
+  } else if (path === "user-list") {
+    breadcrumbItems = [
+      { label: "مدیریت کاربران", icon: "fa-users", url: "#user-list" },
+      { label: "لیست کاربران", url: "#user-list" },
+    ];
+  } else if (path === "user-add") {
+    breadcrumbItems = [
+      { label: "مدیریت کاربران", icon: "fa-users", url: "#user-add" },
+      { label: "افزودن کاربر", url: "#user-add" },
+    ];
+  } else if (path === "user-roles") {
+    breadcrumbItems = [
+      { label: "مدیریت کاربران", icon: "fa-users", url: "#user-roles" },
+      { label: "نقش‌های کاربر", url: "#user-roles" },
+    ];
   } else if (path === "product") {
     breadcrumbItems = [
-      {
-        label: "مدیریت انبار / مدیریت کالا / کالا",
-        icon: "fa-home",
-        url: "#product",
-      },
+      { label: "مدیریت انبار", icon: "fa-home", url: "#product" },
+      { label: "مدیریت کالا", url: "#product" },
+      { label: "کالا ها", url: "#product" },
     ];
   } else if (path === "product-category") {
     breadcrumbItems = [
-      {
-        label: "انبار / مدیریت کالا / کالا های انبار",
-        icon: "fa-home",
-        url: "#product-category",
-      },
+      { label: "انبار", icon: "fa-home", url: "#product-category" },
+      { label: "مدیریت کالا", url: "#product-category" },
+      { label: " دسته بندی کالا", url: "#product-category" },
     ];
   } else if (path === "warehouses") {
     breadcrumbItems = [
-      { label: "مدیریت انبار / انبارها", icon: "fa-home", url: "#warehouses" },
+      { label: "مدیریت انبار", icon: "fa-home", url: "#warehouses" },
+      { label: "اطلاعات پایه", url: "#warehouses" },
+      { label: "انبارها", url: "#warehouses" },
     ];
   } else if (path === "warehouse-products") {
     breadcrumbItems = [
-      {
-        label: "مدیریت انبار / کالای انبار",
-        icon: "fa-home",
-        url: "#warehouse-products",
-      },
+      { label: "مدیریت انبار", icon: "fa-home", url: "#warehouse-products" },
+      { label: "اطلاعات پایه", url: "#warehouses" },
+      { label: "کالای انبار", url: "#warehouse-products" },
     ];
   } else if (path === "warehouse-receipt") {
     breadcrumbItems = [
-      {
-        label: "مدیریت انبار / رسید انبار",
-        icon: "fa-home",
-        url: "#warehouse-receipt",
-      },
+      { label: "مدیریت انبار", icon: "fa-home", url: "#warehouse-receipt" },
+      { label: "رسید انبار", url: "#warehouse-receipt" },
     ];
   } else if (path === "warehouse-request") {
     breadcrumbItems = [
-      {
-        label: "مدیریت انبار / درخواست از انبار",
-        icon: "fa-home",
-        url: "#warehouse-request",
-      },
+      { label: "مدیریت انبار", icon: "fa-home", url: "#warehouse-request" },
+      { label: "درخواست از انبار", url: "#warehouse-request" },
     ];
   } else if (path === "warehouse-to-warehouse") {
     breadcrumbItems = [
       {
-        label: "مدیریت انبار / درخواست انبار به انبار",
+        label: "مدیریت انبار",
         icon: "fa-home",
         url: "#warehouse-to-warehouse",
       },
+      { label: "درخواست انبار به انبار", url: "#warehouse-to-warehouse" },
     ];
   } else if (path === "warehouse-confirm") {
     breadcrumbItems = [
-      {
-        label: "مدیریت انبار / تائید حواله انبار",
-        icon: "fa-home",
-        url: "#warehouse-confirm",
-      },
+      { label: "مدیریت انبار", icon: "fa-home", url: "#warehouse-confirm" },
+      { label: "تأیید حواله انبار", url: "#warehouse-confirm" },
     ];
   } else if (path === "warehouse-reports") {
     breadcrumbItems = [
-      {
-        label: "مدیریت انبار / گزارشات انبار",
-        icon: "fa-home",
-        url: "#warehouse-reports",
-      },
+      { label: "مدیریت انبار", icon: "fa-home", url: "#warehouse-reports" },
+      { label: "گزارشات انبار", url: "#warehouse-reports" },
     ];
   } else if (path === "purchasing") {
     breadcrumbItems = [
@@ -91,30 +90,6 @@ window.updateBreadcrumb = function () {
     ];
   } else if (path === "sales") {
     breadcrumbItems = [{ label: "فروش", icon: "fa-database", url: "#sales" }];
-  } else if (path === "user-list") {
-    breadcrumbItems = [
-      {
-        label: "مدیریت کاربران / لیست کاربران",
-        icon: "fa-users",
-        url: "#user-list",
-      },
-    ];
-  } else if (path === "user-add") {
-    breadcrumbItems = [
-      {
-        label: "مدیریت کاربران / افزودن کاربر",
-        icon: "fa-users",
-        url: "#user-add",
-      },
-    ];
-  } else if (path === "user-roles") {
-    breadcrumbItems = [
-      {
-        label: "مدیریت کاربران / نقش های کاربر",
-        icon: "fa-users",
-        url: "#user-roles",
-      },
-    ];
   } else if (path === "system") {
     breadcrumbItems = [
       { label: "مدیریت سیستم", icon: "fa-television", url: "#system" },
@@ -123,12 +98,14 @@ window.updateBreadcrumb = function () {
     breadcrumbItems = [{ label: "صفحه ناشناخته" }];
   }
 
-  // ساختن بردکرامب
+  // ساختن آیتم‌های بردکرامب
   breadcrumbItems.forEach((item, index) => {
     const li = document.createElement("li");
     li.classList.add("breadcrumb-item");
 
-    if (index === breadcrumbItems.length - 1 || !item.url) {
+    const isLast = index === breadcrumbItems.length - 1;
+
+    if (isLast || !item.url) {
       li.classList.add("active");
       li.setAttribute("aria-current", "page");
       li.innerHTML = `${item.icon ? `<i class="fas ${item.icon}"></i>` : ""} ${
