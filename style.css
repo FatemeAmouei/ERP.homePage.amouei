@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "IranSans";
-  src: url("./font/fa-Iran-sans-web-light.woff2");
+    font-family: 'IranSans';
+    src: url('../font/fa-Iran-sans-web-bold.woff2') format('woff2');
 }
 
 :root {
@@ -168,7 +168,7 @@ body {
 
 .options-container {
   position: absolute;
-  top: 8.5%;
+  top: 6.5%;
   left: 4%;
   z-index: 999;
   background-color: var(--color-white);
@@ -251,7 +251,7 @@ body {
 /* SidebarStart */
 
 .sidebar-section {
-  width: clamp(180px, 20vw, 260px);
+  width: clamp(180px, 20vw, 330px);
   min-width: 180px;
   background-color: var(--color-white);
   height: 85vh;
