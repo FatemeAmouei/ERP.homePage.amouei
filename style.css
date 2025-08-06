@@ -439,7 +439,7 @@ input[type="checkbox"]:checked + label .sidebar-arrow {
   color: var(--gray-300);
   margin-bottom: 0.5rem;
   padding: 0;
-  height: 5vh;
+  height: 3vh;
 }
 
 .toolbars-right {
@@ -460,7 +460,7 @@ input.search-input {
   padding-right: 20px;
   font-size: var(--font-size-Xsmall);
   width: clamp(375px, 5vw, 30px);
-  height: clamp(30px, 5vw, 40px);
+  height: clamp(30px, 3vw, 30px);
   border-radius: 4px;
   text-align: right;
   border: 1px solid var(--gray-300);
@@ -476,7 +476,8 @@ input.search-input {
   display: inline-flex;
   min-width: max-content;
   width: clamp(100px, 12vw, 160px);
-  height: clamp(32px, 5vw, 40px);
+  height: clamp(30px, 3vw, 30px);
+
   font-size: var(--font-size-Xsmall);
   border: 1px solid var(--gray-300);
   border-radius: 4px;
@@ -533,7 +534,8 @@ input.Date-input {
   position: relative;
   font-size: var(--font-size-Xsmall);
   width: 157px;
-  height: 40px;
+  height: clamp(30px, 3vw, 30px);
+
   border-radius: 4px;
   text-align: right;
   border: 1px solid var(--gray-300);
@@ -557,6 +559,10 @@ input.Date-input {
   background-color: var(--gray-100);
   margin-right: 0.5rem;
   border-radius: 4px;
+  height: clamp(30px, 3vw, 30px);
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
 
 .toolbars-left {
@@ -568,17 +574,26 @@ input.Date-input {
 }
 
 .toolbars-left p {
-  font-size: 12px;
+  font-size: var(--font-size-Xsmall);
   color: var(--primary-400);
   width: 64px;
-  height: 40px;
-  padding-top: 0.5rem;
+  height: clamp(30px, 3vw, 30px);
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.toolbars-left p:hover {
+  color: var(--color-balck);
+  background: var(--primary-400);
+  border-radius: 4px;
 }
 
 .filter {
   border: 1px solid var(--primary-400);
   width: 74px;
-  height: 40px;
+  height: clamp(30px, 3vw, 30px);
+
   border-radius: 4px;
   display: flex;
   flex-direction: row-reverse;
@@ -593,7 +608,7 @@ input.Date-input {
 
 .sortImage {
   width: 40px;
-  height: 40px;
+  height: clamp(30px, 3vw, 30px);
   border-radius: 4px;
   border: 1px solid var(--gray-300);
   display: flex;
@@ -754,12 +769,6 @@ button.page-btn.active {
     display: none;
   }
 
-  .toolbars-left p {
-    font-size: var(--font-size-Xsmall);
-    font-weight: bold;
-    padding-top: 0.8rem;
-  }
-
   .search-btn {
     align-items: center;
     justify-content: center;
@@ -789,19 +798,6 @@ button.page-btn.active {
     background-size: 16px 16px;
     padding-left: 1rem;
   }
-
-  .date-icon {
-    top: 24.5%;
-    right: 67%;
-  }
-
-  .toolbars-left p,
-  .toolbars-left filter {
-    padding-top: 0.5rem;
-    width: 44px;
-    height: 30px;
-    font-size: 8px;
-  }
 }
 
 @media (min-width: 900px) {
@@ -817,8 +813,19 @@ button.page-btn.active {
   .Footer-section {
     padding: 0.6rem;
   }
+
   .sideBar-end__txt {
     padding-bottom: 2rem;
+  }
+
+  .toolbars-left p {
+    font-size: var(--font-size-Xsmall);
+    font-weight: bold;
+    color: var(--primary-400);
+    height: clamp(30px, 3vw, 30px);
+    align-items: center;
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -865,9 +872,8 @@ button.page-btn.active {
   }
 
   .search-input::placeholder {
-    color: transparent;
-    background: url("./img/search-normal.png") no-repeat center center;
-    background-size: 16px 16px;
+    background: url("./img/search-normal.png") no-repeat right center;
+    background-size: 15px 15px;
   }
 
   .filter span {
@@ -877,6 +883,11 @@ button.page-btn.active {
   .toolbars-left p {
     font-size: var(--font-size-Xsmall);
     font-weight: bold;
+    color: var(--primary-400);
+    height: clamp(30px, 3vw, 30px);
+    align-items: center;
+    display: flex;
+    justify-content: center;
   }
 
   .date-icon {
@@ -884,15 +895,10 @@ button.page-btn.active {
     right: 57.3%;
   }
 
-  .toolbars-left p {
-    padding-top: 0.5rem;
-    width: 44px;
-    height: 30px;
-  }
-
   .toolbars {
     height: 3vh;
   }
+
   .footer-section {
     justify-content: center;
   }
