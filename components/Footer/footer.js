@@ -1,6 +1,6 @@
 const listItems = [
   { id: 1, name: "name", family: "family1" },
-  { id: 2, name: "name", family: "family2" },
+  /*   { id: 2, name: "name", family: "family2" },
   { id: 3, name: "name", family: "family3" },
   { id: 4, name: "name", family: "family4" },
   { id: 5, name: "name", family: "family5" },
@@ -20,7 +20,7 @@ const listItems = [
   { id: 19, name: "name", family: "family19" },
   { id: 20, name: "name", family: "family20" },
   { id: 21, name: "name", family: "family21" },
-  { id: 22, name: "name", family: "family22" },
+  { id: 22, name: "name", family: "family22" }, */
 ];
 
 let userListContainer = document.querySelector("#list");

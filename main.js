@@ -15,11 +15,11 @@ document.addEventListener("DOMContentLoaded", () => {
     loadComponent("components/Sidebar/sidebar.html", "sidebar-container").then(
       () => loadJS("components/Sidebar/sidebar.js")
     ),
-    loadComponent("components/Footer/footer.html", "Footer-section").then(() =>
+    loadComponent("components/Footer/footer.html", "footer-section").then(() =>
       loadJS("components/Footer/footer.js")
     ),
-    loadComponent("components/Navbar/navbar.html", "navbar-container").then(
-      () => loadJS("components/Navbar/navbar.js")
+    loadComponent("components/Navbar/toolbars.html", "toolbars-container").then(
+      () => loadJS("components/Navbar/toolbars.js")
     ),
   ]).then(() => {
     loadJS("scripts/router.js");

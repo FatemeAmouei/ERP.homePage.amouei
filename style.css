@@ -41,8 +41,8 @@
   --gray-25: #fcfcfd;
   --gray-50: #f9fafb;
   --gray-100: #f2f4f7;
-  --gray-200: #e4e7ec;
-  --gray-300: #d0d5dd;
+  --gray-200: #e2e8ef;
+  --gray-300: #c8d7e6;
   --gray-400: #87a7c8;
   --gray-500: #587497;
   --gray-600: #475467;
@@ -168,8 +168,8 @@ body {
 
 .options-container {
   position: absolute;
-  top: 8%;
-  left: 3%;
+  top: 8.5%;
+  left: 4%;
   z-index: 999;
   background-color: var(--color-white);
   color: var(--gray-700);
@@ -180,7 +180,7 @@ body {
   border: none;
   box-shadow: 0 3px 11px 0 rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  width: clamp(110px, 20vw, 200px);
+  width: clamp(100px, 15vw, 150px);
 }
 
 .profile-option {
@@ -255,11 +255,12 @@ body {
   min-width: 180px;
   background-color: var(--color-white);
   height: 85vh;
-  padding: 0 1rem 0 0.5rem;
+  padding-right: 1rem;
   margin: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow-y: auto;
 }
 
 .sideBar-top {
@@ -413,10 +414,11 @@ input[type="checkbox"]:checked + label .sidebar-arrow {
 /* SidebarEnd */
 
 /* NavbarStart */
+
 .breadcrumb {
   padding: 1rem;
   font-size: var(--font-size-small);
-  border-bottom: 1px solid var(--gray-400);
+  border-bottom: 1px solid var(--gray-200);
 }
 
 .breadcrumb-item a {
@@ -432,12 +434,179 @@ input[type="checkbox"]:checked + label .sidebar-arrow {
   font-weight: bold;
   color: var(--gray-700);
 }
+
+.toolbars {
+  color: var(--gray-300);
+  margin-bottom: 0.5rem;
+  padding: 0;
+  height: 5vh;
+}
+
+.toolbars-right {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 2;
+}
+
+input::placeholder {
+  font-size: var(--font-size-Xsmall);
+  padding-right: 10px;
+  color: var(--color-slateGray);
+}
+
+input.search-input {
+  padding-left: 10px;
+  padding-right: 20px;
+  font-size: var(--font-size-Xsmall);
+  width: clamp(375px, 5vw, 30px);
+  height: clamp(30px, 5vw, 40px);
+  border-radius: 4px;
+  text-align: right;
+  border: 1px solid var(--gray-300);
+}
+
+.search-input::placeholder {
+  background: url("./img/search-normal.png") no-repeat right center;
+  background-size: 16px 16px;
+  padding: 2rem;
+}
+
+.warehouse-dropdown {
+  display: inline-flex;
+  min-width: max-content;
+  width: clamp(100px, 12vw, 160px);
+  height: clamp(32px, 5vw, 40px);
+  font-size: var(--font-size-Xsmall);
+  border: 1px solid var(--gray-300);
+  border-radius: 4px;
+  color: var(--color-slateGray);
+}
+
+.warehouse-dropdown:focus {
+  border-color: var(--color-balck);
+}
+
+.warehouse-dropdown span {
+  padding: 0 1rem;
+}
+
+.warehouse-dropdown .dropdown-menu {
+  width: 100%;
+  min-width: unset;
+  border-radius: 4px;
+  padding: 0;
+}
+
+.warehouse-dropdown .dropdown-toggle {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  font-size: inherit;
+  white-space: nowrap;
+  border: none;
+}
+
+.dropdown-item {
+  font-size: var(--font-size-Xsmall);
+}
+
+.dropdown-item:hover {
+  background-color: var(--primary-100);
+  color: var(--primary-400);
+  font-weight: bold;
+}
+
+.warehouse-dropdown .dropdown-menu {
+  width: 100%;
+  min-width: max-content;
+  font-size: var(--font-size-Xsmall);
+  padding: 0;
+  margin: 0;
+}
+
+input.Date-input {
+  position: relative;
+  font-size: var(--font-size-Xsmall);
+  width: 157px;
+  height: 40px;
+  border-radius: 4px;
+  text-align: right;
+  border: 1px solid var(--gray-300);
+}
+
+.Date-input::placeholder {
+  background: url("./img/calender.png") no-repeat 5px center;
+  background-size: 16px 16px;
+}
+
+.date-icon {
+  position: absolute;
+  top: 22%;
+  right: 63.5%;
+  display: flex;
+  justify-content: center;
+}
+
+.search-btn {
+  color: var(--gray-700);
+  background-color: var(--gray-100);
+  margin-right: 0.5rem;
+  border-radius: 4px;
+}
+
+.toolbars-left {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 1rem;
+  align-items: center;
+  flex: 1;
+}
+
+.toolbars-left p {
+  font-size: 12px;
+  color: var(--primary-400);
+  width: 64px;
+  height: 40px;
+  padding-top: 0.5rem;
+}
+
+.filter {
+  border: 1px solid var(--primary-400);
+  width: 74px;
+  height: 40px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter span {
+  font-size: 12px;
+  color: var(--primary-400);
+}
+
+.sortImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  border: 1px solid var(--gray-300);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* NavbarEnd */
 
 /* FooterStart */
-.Footer-section {
+.footer-section {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: 0 1rem;
   flex-wrap: wrap;
@@ -447,7 +616,7 @@ input[type="checkbox"]:checked + label .sidebar-arrow {
   border-top: 1px solid var(--color-lightGray);
 }
 
-.Footer-right {
+.footer-right {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -536,16 +705,111 @@ button.page-btn.active {
 }
 /* FooterEnd */
 
+/* Responsive */
+@media (max-width: 1280px) and (min-width: 700px) {
+  .toolbars {
+    flex-wrap: nowrap;
+    height: 3vh;
+  }
+
+  .toolbars-right {
+    flex-wrap: nowrap;
+    width: 80%;
+  }
+
+  .toolbars-right input,
+  .warehouse-dropdown {
+    width: 150px !important;
+    height: 30px !important;
+  }
+
+  .Date-input::placeholder {
+    background: url("./img/calender.png") no-repeat 5px center;
+    background-size: 16px 16px;
+  }
+
+  .search-input::placeholder {
+    background: url("./img/search-normal.png") no-repeat right center;
+    background-size: 16px 16px;
+    padding-left: 1rem;
+  }
+
+  .toolbars-right .search-btn,
+  .toolbars-right .date-icon,
+  .filter,
+  .sortImage {
+    width: 30px !important;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .toolbars-left {
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    width: 20%;
+  }
+
+  .filter span {
+    display: none;
+  }
+
+  .toolbars-left p {
+    font-size: var(--font-size-Xsmall);
+    font-weight: bold;
+    padding-top: 0.8rem;
+  }
+
+  .search-btn {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+
+  .date-icon {
+    top: 21%;
+    right: 57%;
+  }
+}
+
+@media (max-width: 1033px) and (min-width: 700px) {
+  .options-container {
+    left: 3.5%;
+    top: 8%;
+  }
+
+  .toolbars-right input,
+  .warehouse-dropdown {
+    width: 100px !important;
+  }
+
+  .search-input::placeholder {
+    color: transparent;
+    background: url("./img/search-normal.png") no-repeat center center;
+    background-size: 16px 16px;
+    padding-left: 1rem;
+  }
+
+  .date-icon {
+    top: 24.5%;
+    right: 67%;
+  }
+
+  .toolbars-left p,
+  .toolbars-left filter {
+    padding-top: 0.5rem;
+    width: 44px;
+    height: 30px;
+    font-size: 8px;
+  }
+}
+
 @media (min-width: 900px) {
   .Footer-section {
-    justify-content: space-between;
     padding: 1rem;
   }
   .sideBar-end__txt {
     padding-bottom: 1rem;
-  }
-  .options-container {
-    top: 10%;
   }
 }
 
@@ -555,5 +819,81 @@ button.page-btn.active {
   }
   .sideBar-end__txt {
     padding-bottom: 2rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .options-container {
+    position: absolute;
+    top: 7%;
+    left: 5%;
+  }
+
+  .toolbars-right {
+    width: 50% !important;
+  }
+
+  .toolbars-left {
+    width: 50% !important;
+  }
+
+  .toolbars-right input,
+  .search-btn,
+  .filter,
+  .toolbars-left .sortImage {
+    width: 30px;
+    height: 30px;
+  }
+
+  .warehouse-dropdown {
+    height: 30px !important;
+    min-width: 52px;
+  }
+
+  .search-btn {
+    width: 10px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+
+  .Date-input::placeholder {
+    color: transparent;
+    background: url("./img/calender.png") no-repeat center center;
+    background-size: 16px 16px;
+  }
+
+  .search-input::placeholder {
+    color: transparent;
+    background: url("./img/search-normal.png") no-repeat center center;
+    background-size: 16px 16px;
+  }
+
+  .filter span {
+    display: none;
+  }
+
+  .toolbars-left p {
+    font-size: var(--font-size-Xsmall);
+    font-weight: bold;
+  }
+
+  .date-icon {
+    top: 19%;
+    right: 57.3%;
+  }
+
+  .toolbars-left p {
+    padding-top: 0.5rem;
+    width: 44px;
+    height: 30px;
+  }
+
+  .toolbars {
+    height: 3vh;
+  }
+  .footer-section {
+    justify-content: center;
   }
 }
