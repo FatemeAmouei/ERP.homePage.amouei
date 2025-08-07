@@ -484,7 +484,7 @@ input.Date-input {
 }
 
 .Date-input::placeholder {
-  background: url("./img/calender.png") no-repeat 5px center;
+  background: url("./img/calender.png") no-repeat 5px 0;
   background-size: 16px 16px;
 }
 
@@ -881,5 +881,10 @@ button.page-btn.active {
     justify-content: center;
     padding-top: 0.1rem;
     padding-bottom: 0;
+  }
+
+  .Date-input {
+    background: url("./img/calender.png") no-repeat center center;
+    background-size: 16px 16px;
   }
 }
